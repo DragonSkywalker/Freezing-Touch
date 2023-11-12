@@ -7,7 +7,7 @@
 size = Vector2(40, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8bnm"]
-size = Vector2(41, 41)
+size = Vector2(40, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvajq"]
 
@@ -26,8 +26,24 @@ texture = ExtResource("1_djcvn")
 vframes = 2
 
 [node name="PlayerCheck" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_f8bnm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="PlayerCheck"]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_f8bnm")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="PlayerCheck"]
+position = Vector2(-25, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_f8bnm")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="PlayerCheck"]
+position = Vector2(25, 0)
+rotation = 1.5708
 shape = SubResource("RectangleShape2D_f8bnm")
 
 [node name="NeighborCheck" type="Area2D" parent="."]

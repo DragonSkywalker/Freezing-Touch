@@ -24,6 +24,10 @@ Utils="*res://Global/Utils.gd"
 2d_physics/layer_1="Ground"
 2d_physics/layer_16="IceNeighborCheck"
 
+[physics]
+
+2d/default_gravity=1200.0
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

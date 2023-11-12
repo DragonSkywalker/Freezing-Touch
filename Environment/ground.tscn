@@ -6,6 +6,7 @@ size = Vector2(40, 40)
 [node name="Ground" type="Node2D"]
 
 [node name="GroundCollision" type="StaticBody2D" parent="."]
+visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollision"]
