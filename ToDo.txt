@@ -1,0 +1,11 @@
+Current:
+	
+
+Main:
+	make a valve
+		make water stops flowing and stuff
+	level making
+
+Optional:
+	make a box that blocks water
+	make a spin animation
