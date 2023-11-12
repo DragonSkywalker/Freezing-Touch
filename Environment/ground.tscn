@@ -3,17 +3,15 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oqgqr"]
 size = Vector2(40, 40)
 
-[node name="Ground" type="Node2D"]
-
-[node name="GroundCollision" type="StaticBody2D" parent="."]
-visible = false
+[node name="Ground" type="StaticBody2D"]
 collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundCollision"]
-shape = SubResource("RectangleShape2D_oqgqr")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 position = Vector2(-20, -20)
 scale = Vector2(2, 2)
 color = Color(0.4, 0.223529, 0.192157, 1)
 polygon = PackedVector2Array(0, 0, 20, 0, 20, 20, 0, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("RectangleShape2D_oqgqr")

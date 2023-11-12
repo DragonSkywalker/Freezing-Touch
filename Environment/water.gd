@@ -1,26 +1,24 @@
-extends Node2D
-class_name Water
+extends StaticBody2D
 
-@onready var collision = get_node("IceCollision")
 @onready var sprite = get_node("Sprite")
 var freeze_source = false
-var neighbors: Array
 var actually_frozen = false
+var neighbors: Array
 
-func _process(delta):
+func _process(_delta):
 	if freeze_source:
 		freeze_everyone()
 
 func freeze():
 	actually_frozen = true
 	sprite.frame = 1
-	collision.set_collision_layer_value(1, true)
+	set_collision_layer_value(1, true)
 	
 
 func melt():
 	actually_frozen = false
 	sprite.frame = 0
-	collision.set_collision_layer_value(1, false)
+	set_collision_layer_value(1, false)
 
 
 func freeze_everyone():
@@ -48,5 +46,5 @@ func _on_area_2d_body_exited(body):
 
 
 func _on_neighbor_check_body_entered(body):
-	if neighbors.find(body.owner) == -1:
-		neighbors.append(body.owner)
+	if neighbors.find(body) == -1:
+		neighbors.append(body)

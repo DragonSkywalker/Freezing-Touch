@@ -11,14 +11,12 @@ size = Vector2(40, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wvajq"]
 
-[node name="Water" type="Node2D"]
-script = ExtResource("1_skugl")
-
-[node name="IceCollision" type="StaticBody2D" parent="."]
+[node name="Water" type="StaticBody2D"]
 collision_layer = 32768
 collision_mask = 0
+script = ExtResource("1_skugl")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="IceCollision"]
+[node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nfwvq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
