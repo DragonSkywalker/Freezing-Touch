@@ -1,10 +1,12 @@
 Current:
-	
+	Change the root nodes of ground and water to static body
+		includes changing the script in water
 
 Main:
 	make a valve
 		make water stops flowing and stuff
 	level making
+	edit README
 
 Optional:
 	make a box that blocks water
