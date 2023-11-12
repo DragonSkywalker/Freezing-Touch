@@ -1,7 +1,8 @@
 extends Node2D
 
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _ready():
+	var children = get_node("MyTileMap").get_children()
+	for n in children:
+		print(n.name)
 	

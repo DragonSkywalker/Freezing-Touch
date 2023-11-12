@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bichq7eescje7"]
+[gd_scene load_steps=6 format=3 uid="uid://bichq7eescje7"]
 
 [ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="1_djcvn"]
 [ext_resource type="Script" path="res://Environment/water.gd" id="1_skugl"]
@@ -6,8 +6,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwvq"]
 size = Vector2(40, 40)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2orwl"]
-radius = 91.4112
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8bnm"]
+size = Vector2(41, 41)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wvajq"]
 
 [node name="Water" type="Node2D"]
 script = ExtResource("1_skugl")
@@ -24,10 +26,20 @@ texture = ExtResource("1_djcvn")
 vframes = 2
 
 [node name="PlayerCheck" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
-shape = SubResource("CircleShape2D_2orwl")
+shape = SubResource("RectangleShape2D_f8bnm")
+
+[node name="NeighborCheck" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NeighborCheck"]
+rotation = 0.785398
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_wvajq")
 
 [connection signal="body_entered" from="PlayerCheck" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="PlayerCheck" to="." method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="NeighborCheck" to="." method="_on_neighbor_check_body_entered"]
