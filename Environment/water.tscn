@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://bichq7eescje7"]
+
+[ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="1_djcvn"]
+[ext_resource type="Script" path="res://Environment/water.gd" id="1_skugl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwvq"]
+size = Vector2(40, 40)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2orwl"]
+radius = 91.4112
+
+[node name="Water" type="Node2D"]
+script = ExtResource("1_skugl")
+
+[node name="IceCollision" type="StaticBody2D" parent="."]
+collision_layer = 32768
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="IceCollision"]
+shape = SubResource("RectangleShape2D_nfwvq")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_djcvn")
+vframes = 2
+
+[node name="PlayerCheck" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
+shape = SubResource("CircleShape2D_2orwl")
+
+[connection signal="body_entered" from="PlayerCheck" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="PlayerCheck" to="." method="_on_area_2d_body_exited"]

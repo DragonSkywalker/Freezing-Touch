@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://elhp8bb2erfl"]
+
+[ext_resource type="PackedScene" uid="uid://bichq7eescje7" path="res://Environment/water.tscn" id="1_h2acu"]
+[ext_resource type="PackedScene" uid="uid://cgohh7an350pm" path="res://Environment/ground.tscn" id="2_7m1m5"]
+[ext_resource type="Script" path="res://Environment/my_tile_map.gd" id="3_ehyc7"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_01raq"]
+scenes/1/scene = ExtResource("1_h2acu")
+scenes/2/scene = ExtResource("2_7m1m5")
+
+[sub_resource type="TileSet" id="TileSet_n5kxf"]
+tile_size = Vector2i(40, 40)
+sources/0 = SubResource("TileSetScenesCollectionSource_01raq")
+
+[node name="MyTileMap" type="TileMap"]
+tile_set = SubResource("TileSet_n5kxf")
+cell_quadrant_size = 40
+format = 2
+script = ExtResource("3_ehyc7")
