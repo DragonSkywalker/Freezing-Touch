@@ -1,10 +1,8 @@
 Current:
-	Change the root nodes of ground and water to static body
-		includes changing the script in water
+	make valve a water source 
 
 Main:
-	make a valve
-		make water stops flowing and stuff
+	valve animation
 	level making
 	edit README
 
