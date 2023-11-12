@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bb1spirppslm7"]
+
+[ext_resource type="Script" path="res://Environment/valve.gd" id="1_44w7y"]
+[ext_resource type="Texture2D" uid="uid://dmapj6jdrwyrv" path="res://Assets/valve.png" id="2_jiid3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxl1d"]
+size = Vector2(40, 16)
+
+[node name="Valve" type="StaticBody2D"]
+script = ExtResource("1_44w7y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_jiid3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_cxl1d")

@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://drfwk5ah5lxx3"]
+[gd_scene load_steps=5 format=3 uid="uid://drfwk5ah5lxx3"]
 
 [ext_resource type="Script" path="res://Characters/player.gd" id="1_2ljer"]
 [ext_resource type="Texture2D" uid="uid://dqnt8afyswxao" path="res://Assets/player.png" id="2_mum3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfypl"]
 size = Vector2(40, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyf4d"]
+size = Vector2(4, 4)
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_2ljer")
@@ -14,3 +17,12 @@ shape = SubResource("RectangleShape2D_lfypl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_mum3q")
+
+[node name="ValveDetection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ValveDetection"]
+position = Vector2(0, 20)
+shape = SubResource("RectangleShape2D_qyf4d")
+
+[connection signal="body_entered" from="ValveDetection" to="." method="_on_valve_detection_body_entered"]
+[connection signal="body_exited" from="ValveDetection" to="." method="_on_valve_detection_body_exited"]
