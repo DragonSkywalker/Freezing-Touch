@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dqnt8afyswxao" path="res://Assets/player.png" id="2_mum3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lfypl"]
-size = Vector2(40, 40)
+size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyf4d"]
 size = Vector2(4, 4)
@@ -16,12 +16,13 @@ script = ExtResource("1_2ljer")
 shape = SubResource("RectangleShape2D_lfypl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_mum3q")
 
 [node name="ValveDetection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ValveDetection"]
-position = Vector2(0, 20)
+position = Vector2(0, 16)
 shape = SubResource("RectangleShape2D_qyf4d")
 
 [connection signal="body_entered" from="ValveDetection" to="." method="_on_valve_detection_body_entered"]
