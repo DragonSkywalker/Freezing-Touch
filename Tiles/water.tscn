@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bichq7eescje7"]
 
-[ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="1_djcvn"]
-[ext_resource type="Script" path="res://Environment/water.gd" id="1_skugl"]
+[ext_resource type="Script" path="res://Tiles/water.gd" id="1_wvlln"]
+[ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="2_npvb0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwvq"]
 size = Vector2(40, 40)
@@ -14,13 +14,13 @@ size = Vector2(40, 10)
 [node name="Water" type="StaticBody2D"]
 collision_layer = 32768
 collision_mask = 0
-script = ExtResource("1_skugl")
+script = ExtResource("1_wvlln")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nfwvq")
 
 [node name="Sprite" type="Sprite2D" parent="."]
-texture = ExtResource("1_djcvn")
+texture = ExtResource("2_npvb0")
 vframes = 2
 
 [node name="PlayerCheck" type="Area2D" parent="."]
