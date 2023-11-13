@@ -1,7 +1,8 @@
 Current:
-	make valve a water source 
+	make tabs connected to valve
 
 Main:
+	make valve a water source 
 	valve animation
 	level making
 	edit README
