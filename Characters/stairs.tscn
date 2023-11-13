@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnp2q86mxt144"]
+
+[ext_resource type="Texture2D" uid="uid://ujg8asg5aky4" path="res://Assets/stair.png" id="1_b3tfm"]
+
+[sub_resource type="GDScript" id="GDScript_5qltd"]
+script/source = "extends Area2D
+
+
+
+func _on_body_entered(body):
+	if body.name == \"Player\":
+		var level = get_tree().current_scene.LVL
+		var next_level = \"res://Main_Scenes/Levels/Level\" + str(level + 1) + \".tscn\"
+		get_tree().change_scene_to_file(next_level)
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwxdu"]
+size = Vector2(16, 24)
+
+[node name="Stairs" type="Area2D"]
+script = SubResource("GDScript_5qltd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_kwxdu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_b3tfm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

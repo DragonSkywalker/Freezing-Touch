@@ -1,12 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://elhp8bb2erfl"]
+[gd_scene load_steps=8 format=3 uid="uid://elhp8bb2erfl"]
 
 [ext_resource type="PackedScene" uid="uid://bichq7eescje7" path="res://Tiles/water.tscn" id="1_6k3ym"]
 [ext_resource type="PackedScene" uid="uid://cgohh7an350pm" path="res://Tiles/ground.tscn" id="2_h1whe"]
+[ext_resource type="PackedScene" uid="uid://cnp2q86mxt144" path="res://Characters/stairs.tscn" id="3_a85im"]
 [ext_resource type="Texture2D" uid="uid://cdl63tj4g57yx" path="res://Assets/ground-Sheet.png" id="3_jkxr0"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_01raq"]
 scenes/1/scene = ExtResource("1_6k3ym")
 scenes/2/scene = ExtResource("2_h1whe")
+scenes/3/scene = ExtResource("3_a85im")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_83ivb"]
 texture = ExtResource("3_jkxr0")
@@ -39,6 +41,7 @@ texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 1:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0

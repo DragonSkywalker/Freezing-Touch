@@ -1,10 +1,9 @@
 Current:
-	Box
+	level making
 
 Main:
 	Connect valves and outlets
 	animations
-	level making
 	edit README
 
 Optional:
