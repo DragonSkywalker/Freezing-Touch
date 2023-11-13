@@ -1,9 +1,10 @@
 Current:
-	Connect valves and outlets
+	make a side outlet 
 
 Main:
-	make valve a water source 
-	valve animation
+	Box
+	Connect valves and outlets
+	animations
 	level making
 	edit README
 
