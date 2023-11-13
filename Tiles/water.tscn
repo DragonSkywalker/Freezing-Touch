@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://bichq7eescje7"]
+[gd_scene load_steps=7 format=3 uid="uid://bichq7eescje7"]
 
 [ext_resource type="Script" path="res://Tiles/Scripts/water.gd" id="1_h2cib"]
 [ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="2_npvb0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwvq"]
-size = Vector2(32, 32)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_00qfv"]
+radius = 5.0
+height = 32.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkf7m"]
+size = Vector2(32, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f8bnm"]
 size = Vector2(32, 8)
@@ -17,15 +21,26 @@ collision_layer = 32768
 collision_mask = 0
 script = ExtResource("1_h2cib")
 
-[node name="Collision" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_nfwvq")
-
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("2_npvb0")
 vframes = 2
 
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_00qfv")
+
+[node name="Collision3" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wkf7m")
+
+[node name="Collision2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 11)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_00qfv")
+
 [node name="PlayerCheck" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheck"]
 position = Vector2(0, -20)
@@ -46,6 +61,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_f8bnm")
 
 [node name="NeighborCheck" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 collision_mask = 32768
 

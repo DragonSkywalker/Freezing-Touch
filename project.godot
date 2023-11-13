@@ -19,6 +19,11 @@ config/icon="res://Assets/water&ice-Sheet.png"
 
 Utils="*res://Global/Utils.gd"
 
+[display]
+
+window/size/viewport_width=640
+window/size/viewport_height=640
+
 [layer_names]
 
 2d_physics/layer_1="Ground"
@@ -33,3 +38,4 @@ Utils="*res://Global/Utils.gd"
 textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(1, 1, 1, 1)
