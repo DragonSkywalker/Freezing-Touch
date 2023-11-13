@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bb1spirppslm7"]
 
-[ext_resource type="Script" path="res://Tiles/valve.gd" id="1_1iqex"]
+[ext_resource type="Script" path="res://Tiles/Scripts/valve.gd" id="1_1iqex"]
 [ext_resource type="Texture2D" uid="uid://dmapj6jdrwyrv" path="res://Assets/valve.png" id="2_pccee"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxl1d"]

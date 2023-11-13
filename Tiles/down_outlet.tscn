@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ncrp8re16fd1"]
 
+[ext_resource type="Script" path="res://Tiles/Scripts/down_outlet.gd" id="1_1sxfb"]
 [ext_resource type="Texture2D" uid="uid://ccxcmp4x83yx8" path="res://Assets/outlet.png" id="1_p5po5"]
-[ext_resource type="Script" path="res://Tiles/outlet.gd" id="1_wkqp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hncc0"]
 size = Vector2(32, 32)
@@ -11,7 +11,7 @@ size = Vector2(16, 16)
 
 [node name="DownOutlet" type="StaticBody2D"]
 collision_mask = 0
-script = ExtResource("1_wkqp0")
+script = ExtResource("1_1sxfb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_p5po5")

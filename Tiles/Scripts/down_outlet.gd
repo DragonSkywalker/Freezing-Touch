@@ -33,7 +33,4 @@ func _on_button_pressed():
 		is_on = not is_on
 
 func is_static_body(node: Node2D):
-	if node is StaticBody2D:
-		return true
-	else:
-		return false
+	return node is StaticBody2D

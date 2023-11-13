@@ -22,7 +22,6 @@ func _physics_process(delta):
 			position.x = valve.position.x
 			print(valve.is_on)
 		else:
-			position.y -= 5
 			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.

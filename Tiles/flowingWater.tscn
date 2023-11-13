@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://n5wwsiqdaeks"]
 
-[ext_resource type="Script" path="res://Tiles/flowingWater.gd" id="1_2xdvb"]
+[ext_resource type="Script" path="res://Tiles/Scripts/flowingWater.gd" id="1_s2ocv"]
 [ext_resource type="Texture2D" uid="uid://codp7bmbf6nsq" path="res://Assets/water&ice-Sheet.png" id="2_43ain"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nfwvq"]
@@ -15,7 +15,7 @@ size = Vector2(16.0278, 16.0278)
 [node name="FlowingWater" type="StaticBody2D"]
 collision_layer = 32768
 collision_mask = 0
-script = ExtResource("1_2xdvb")
+script = ExtResource("1_s2ocv")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nfwvq")

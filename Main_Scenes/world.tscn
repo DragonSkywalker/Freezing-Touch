@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://drfwk5ah5lxx3" path="res://Characters/player.tscn" id="1_48j13"]
 [ext_resource type="Script" path="res://Main_Scenes/world.gd" id="1_elotb"]
 [ext_resource type="PackedScene" uid="uid://elhp8bb2erfl" path="res://Tiles/my_tile_map.tscn" id="2_q778n"]
-[ext_resource type="PackedScene" uid="uid://ncrp8re16fd1" path="res://Tiles/outlet.tscn" id="5_6434w"]
+[ext_resource type="PackedScene" uid="uid://ncrp8re16fd1" path="res://Tiles/down_outlet.tscn" id="5_6434w"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_elotb")
@@ -17,3 +17,6 @@ layer_0/tile_data = PackedInt32Array(720911, 0, 65536, 720910, 0, 131072, 720912
 
 [node name="DownOutlet" parent="." instance=ExtResource("5_6434w")]
 position = Vector2(496, 79)
+
+[node name="DownOutlet2" parent="." instance=ExtResource("5_6434w")]
+position = Vector2(432, 79)
