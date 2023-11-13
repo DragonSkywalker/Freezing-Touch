@@ -1,8 +1,7 @@
 Current:
-	make a side outlet 
+	Box
 
 Main:
-	Box
 	Connect valves and outlets
 	animations
 	level making
