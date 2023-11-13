@@ -1,3 +1,37 @@
-[gd_scene format=3 uid="uid://ncrp8re16fd1"]
+[gd_scene load_steps=5 format=3 uid="uid://ncrp8re16fd1"]
 
-[node name="Outlet" type="StaticBody2D"]
+[ext_resource type="Texture2D" uid="uid://ccxcmp4x83yx8" path="res://Assets/outlet.png" id="1_p5po5"]
+[ext_resource type="Script" path="res://Tiles/outlet.gd" id="1_wkqp0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hncc0"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1cbc"]
+size = Vector2(16, 16)
+
+[node name="DownOutlet" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_wkqp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_p5po5")
+flip_v = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hncc0")
+
+[node name="Button" type="Button" parent="."]
+offset_left = -11.0
+offset_top = -77.0
+offset_right = 17.0
+offset_bottom = -22.0
+
+[node name="FlowDirection" type="Area2D" parent="."]
+collision_layer = 32769
+collision_mask = 32769
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowDirection"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_f1cbc")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

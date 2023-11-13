@@ -1,5 +1,5 @@
 Current:
-	make tabs connected to valve
+	Connect valves and outlets
 
 Main:
 	make valve a water source 
@@ -11,3 +11,10 @@ Optional:
 	make a box that blocks water
 	make jump relative to how long this space bar is pressed
 	make a spin animation
+
+Note:
+	it is known that turning the outlet off while player is in contact with
+		flowing water causes a crash, but the plan is to make player stunned
+		while turning valves
+	also downwards outlet doesn't freeze on impact even if the bottom water 
+		is already frozen, but still, doesn't matter
