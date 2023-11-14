@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bngjag3ccaq5w"]
+[gd_scene load_steps=6 format=3 uid="uid://bngjag3ccaq5w"]
 
 [ext_resource type="PackedScene" uid="uid://elhp8bb2erfl" path="res://Tiles/my_tile_map.tscn" id="1_e0fyn"]
 [ext_resource type="PackedScene" uid="uid://drfwk5ah5lxx3" path="res://Characters/player.tscn" id="2_1xqo2"]
 [ext_resource type="PackedScene" uid="uid://juoru7gdjjwf" path="res://Characters/button.tscn" id="3_223gq"]
+[ext_resource type="PackedScene" uid="uid://0au86g562aah" path="res://Main_Scenes/text_box.tscn" id="4_iitgl"]
 
 [sub_resource type="GDScript" id="GDScript_85xkq"]
 script/source = "extends Node2D
@@ -20,5 +21,7 @@ layer_0/tile_data = PackedInt32Array(65535, 131073, 1, 131071, 131073, 1, 196607
 position = Vector2(112, 144)
 
 [node name="Button" parent="." instance=ExtResource("3_223gq")]
+
+[node name="TextBox" parent="." instance=ExtResource("4_iitgl")]
 
 [connection signal="body_entered" from="MyTileMap/Stairs" to="MyTileMap/Stairs" method="_on_body_entered" flags=18]

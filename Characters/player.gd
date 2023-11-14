@@ -21,44 +21,45 @@ func _ready():
 				outlet_lst.append(c)
 
 func _physics_process(delta):
-	if movement:
-		# Add the gravity.
-		if not is_on_floor():
-			velocity.y += gravity * delta
+	if not Utils.texting:
+		if movement:
+			# Add the gravity.
+			if not is_on_floor():
+				velocity.y += gravity * delta
 
-		# Handle Jump.
-		if Input.is_action_just_pressed("ui_up") and is_on_floor():
-			if is_on_valve:
-				valve.activate(self)
+			# Handle Jump.
+			if Input.is_action_just_pressed("ui_up") and is_on_floor():
+				if is_on_valve:
+					valve.activate(self)
+				else:
+					velocity.y = JUMP_VELOCITY
+
+			# Get the input direction and handle the movement/deceleration.
+			# As good practice, you should replace UI actions with custom gameplay actions.
+			var direction = Input.get_axis("ui_left", "ui_right")
+			if direction:
+				velocity.x = direction * SPEED
+				get_node("Sprite2D").flip_h = direction - 1
 			else:
-				velocity.y = JUMP_VELOCITY
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction = Input.get_axis("ui_left", "ui_right")
-		if direction:
-			velocity.x = direction * SPEED
-			get_node("Sprite2D").flip_h = direction - 1
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-
-		move_and_slide()
-	
-	for i in get_slide_collision_count():
-		var c = get_slide_collision(i)
-		if c.get_collider() is RigidBody2D:
-			c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
-	
-	
-	if not outlet_lst.is_empty():
-		for n in outlet_lst:
-			if n.finished_flowing:
-				movement = true
-			else:
-				movement = false
+			move_and_slide()
 		
-		if get_node("Sprite2D").is_playing():
-			movement = false
+		for i in get_slide_collision_count():
+			var c = get_slide_collision(i)
+			if c.get_collider() is RigidBody2D:
+				c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
+		
+		
+		if not outlet_lst.is_empty():
+			for n in outlet_lst:
+				if n.finished_flowing:
+					movement = true
+				else:
+					movement = false
+			
+			if get_node("Sprite2D").is_playing():
+				movement = false
 
 
 

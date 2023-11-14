@@ -1,6 +1,7 @@
 extends Node
 
 var level
+var texting
 
 #const SAVE_PATH = "res://Global/save.bin"
 
