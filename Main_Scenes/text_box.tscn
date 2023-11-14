@@ -1,0 +1,108 @@
+[gd_scene load_steps=4 format=3 uid="uid://0au86g562aah"]
+
+[ext_resource type="Texture2D" uid="uid://s4r4vgrb14jn" path="res://Assets/TextBox.png" id="1_0wxq1"]
+[ext_resource type="Script" path="res://Main_Scenes/text_box.gd" id="1_h56gw"]
+[ext_resource type="FontFile" uid="uid://dd714mk03pvi" path="res://Assets/joystix monospace.otf" id="2_c4jdx"]
+
+[node name="TextBox" type="Node2D"]
+script = ExtResource("1_h56gw")
+
+[node name="TextBox" type="Sprite2D" parent="."]
+position = Vector2(320, 320)
+texture = ExtResource("1_0wxq1")
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="Text" type="Label" parent="Text"]
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+
+[node name="1" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "Thank you for 
+volunteering for
+our experimental
+drugs"
+
+[node name="2" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "you got the 
+superpower of 
+freezing any
+liquid you touch"
+
+[node name="3" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "The pill at the
+end of the 
+chambers remove
+your power"
+
+[node name="4" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "I would take it
+if i were you"
+
+[node name="5" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "To you know... 
+Not die of 
+dehydration"
+
+[node name="6" type="Label" parent="Text"]
+visible = false
+offset_left = 248.0
+offset_top = 457.0
+offset_right = 577.0
+offset_bottom = 585.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_c4jdx")
+theme_override_font_sizes/font_size = 24
+text = "Anyway.
+best of luck!"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.05
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

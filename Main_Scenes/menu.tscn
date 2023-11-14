@@ -8,7 +8,7 @@
 script = ExtResource("1_aur5s")
 
 [node name="Start" type="Node2D" parent="."]
-position = Vector2(320, 160)
+position = Vector2(320, 348)
 
 [node name="Button2" type="Sprite2D" parent="Start"]
 texture = ExtResource("1_r64mv")
@@ -23,6 +23,7 @@ theme_override_font_sizes/font_size = 60
 text = "Start"
 
 [node name="Quit" type="Node2D" parent="."]
+visible = false
 position = Vector2(320, 480)
 
 [node name="Button2" type="Sprite2D" parent="Quit"]
@@ -38,7 +39,7 @@ theme_override_font_sizes/font_size = 60
 text = "Quit"
 
 [node name="Levels" type="Node2D" parent="."]
-position = Vector2(320, 320)
+position = Vector2(320, 508)
 
 [node name="Button2" type="Sprite2D" parent="Levels"]
 texture = ExtResource("1_r64mv")
@@ -51,6 +52,18 @@ offset_bottom = 60.0
 theme_override_fonts/font = ExtResource("2_ovqli")
 theme_override_font_sizes/font_size = 55
 text = "Levels"
+
+[node name="Label" type="Label" parent="."]
+offset_top = 47.0
+offset_right = 640.0
+offset_bottom = 258.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_ovqli")
+theme_override_font_sizes/font_size = 80
+text = "Freezing 
+Touch"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="Start/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Quit/Quit" to="." method="_on_quit_pressed"]
