@@ -23,3 +23,4 @@ func activate(player: Node):
 		player.movement = false
 		player.get_node("Sprite2D").flip_h = false
 		player.get_node("Sprite2D").play_backwards("Spin")
+		player.get_node("Sprite2D").set_frame(24)
