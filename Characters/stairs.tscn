@@ -6,11 +6,12 @@
 script/source = "extends Area2D
 
 
-
 func _on_body_entered(body):
 	if body.name == \"Player\":
 		var level = get_tree().current_scene.LVL
 		var next_level = \"res://Main_Scenes/Levels/Level\" + str(level + 1) + \".tscn\"
+		if level + 1 > Utils.level:
+			Utils.saveGame(level + 1)
 		get_tree().change_scene_to_file(next_level)
 "
 

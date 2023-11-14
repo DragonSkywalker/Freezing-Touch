@@ -10,7 +10,7 @@ script/source = "extends Node2D
 const LVL = 1
 "
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 script = SubResource("GDScript_85xkq")
 
 [node name="MyTileMap" parent="." instance=ExtResource("1_e0fyn")]
@@ -20,3 +20,5 @@ layer_0/tile_data = PackedInt32Array(65535, 131073, 1, 131071, 131073, 1, 196607
 position = Vector2(112, 144)
 
 [node name="Button" parent="." instance=ExtResource("3_223gq")]
+
+[connection signal="body_entered" from="MyTileMap/Stairs" to="MyTileMap/Stairs" method="_on_body_entered" flags=18]

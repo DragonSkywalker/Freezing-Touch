@@ -50,14 +50,16 @@ func _physics_process(delta):
 		if c.get_collider() is RigidBody2D:
 			c.get_collider().apply_central_impulse(-c.get_normal() * PUSH_FORCE)
 	
-	for n in outlet_lst:
-		if n.finished_flowing:
-			movement = true
-		else:
-			movement = false
 	
-	if get_node("Sprite2D").is_playing():
-		movement = false
+	if not outlet_lst.is_empty():
+		for n in outlet_lst:
+			if n.finished_flowing:
+				movement = true
+			else:
+				movement = false
+		
+		if get_node("Sprite2D").is_playing():
+			movement = false
 
 
 

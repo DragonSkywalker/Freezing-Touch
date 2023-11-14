@@ -2,10 +2,8 @@ Current:
 	level making
 
 Main:
-	Connect valves and outlets
-	animations
 	edit README
-	Implement a simple save system for level selection
+	Level selection screen
 
 Optional:
 	make a box that blocks water
