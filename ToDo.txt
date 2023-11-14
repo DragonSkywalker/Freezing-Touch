@@ -1,10 +1,10 @@
 Current:
 	level making
-	make professor dialoge cutscene
 
 Main:
 	edit README
 	Level selection screen
+	make professor dialoge cutscene
 
 Optional:
 	make a box that blocks water
