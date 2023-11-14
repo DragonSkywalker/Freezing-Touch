@@ -2,7 +2,7 @@ Current:
 	level making
 
 Main:
-	edit README
+	update water and ice texture
 	Level selection screen
 	make professor dialoge cutscene
 
