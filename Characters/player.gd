@@ -30,7 +30,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up") and is_on_floor():
 			if is_on_valve:
 				valve.activate(self)
-				await get_node("Sprite2D").animation_finished
 			else:
 				velocity.y = JUMP_VELOCITY
 
