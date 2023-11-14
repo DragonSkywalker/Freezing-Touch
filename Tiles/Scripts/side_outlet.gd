@@ -24,8 +24,10 @@ func _on_spawn_timer_timeout():
 	if is_on:
 		var nextTemp = nextWater.instantiate()
 		if nextWaterPos == DOWN:
+			nextTemp.get_node("Sprite").rotation = PI / 2
 			areas.position.y += 32
 		elif nextWaterPos ==LEFT:
+			nextTemp.get_node("Sprite").flip_h = true
 			areas.position.x -= 32
 		else:
 			print(nextWaterPos)

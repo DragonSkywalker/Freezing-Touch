@@ -6,20 +6,30 @@ var freeze_source = false
 var actually_frozen = false
 var neighbors: Array
 var has_player = false
+var water_transform: Array
 
 func _process(_delta):
 	if freeze_source:
 		freeze_everyone()
+	if actually_frozen:
+		if water_transform.is_empty():
+			water_transform = [sprite.rotation, sprite.flip_h]
+		sprite.rotation = 0
+		sprite.flip_h = false
+	else:
+		if not water_transform.is_empty():
+			sprite.rotation = water_transform[0]
+			sprite.flip_h = water_transform[1]
 
 func freeze():
 	actually_frozen = true
-	sprite.frame = 1
+	sprite.play("Ice")
 	set_collision_layer_value(1, true)
 	
 
 func melt():
 	actually_frozen = false
-	sprite.frame = 0
+	sprite.play("Water")
 	set_collision_layer_value(1, false)
 
 

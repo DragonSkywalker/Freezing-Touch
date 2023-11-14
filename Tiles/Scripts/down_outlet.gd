@@ -48,6 +48,7 @@ func is_static_body(node: Node2D):
 func _on_spawn_timer_timeout():
 	if is_on:
 		var nextTemp = nextWater.instantiate()
+		nextTemp.get_node("Sprite").rotation = PI / 2
 		areas.position.y += 32
 		nextTemp.position = areas.position
 		add_child(nextTemp)
