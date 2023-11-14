@@ -4,7 +4,8 @@ extends Node2D
 
 func _on_start_pressed():
 	var level_path = "res://Main_Scenes/Levels/Level" + str(Utils.level) + ".tscn"
-	get_tree().change_scene_to_file(level_path)
+	if get_tree().change_scene_to_file(level_path) == ERR_CANT_OPEN:
+		get_tree().change_scene_to_file("res://Main_Scenes/Levels/Level1.tscn")
 
 
 func _on_quit_pressed():

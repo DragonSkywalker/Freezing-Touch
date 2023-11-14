@@ -1,16 +1,38 @@
-[gd_scene load_steps=3 format=3 uid="uid://bl8axdawp6dpg"]
+[gd_scene load_steps=4 format=3 uid="uid://bl8axdawp6dpg"]
 
 [ext_resource type="Script" path="res://Main_Scenes/level_selection.gd" id="1_w0b46"]
-[ext_resource type="PackedScene" uid="uid://juoru7gdjjwf" path="res://Characters/button.tscn" id="2_clytu"]
+[ext_resource type="Texture2D" uid="uid://dlerrd241w6o5" path="res://Assets/back.png" id="2_26t7d"]
+
+[sub_resource type="GDScript" id="GDScript_n5vrt"]
+script/source = "extends CanvasLayer
+
+
+
+func _on_back_pressed():
+	get_tree().change_scene_to_file(\"res://Main_Scenes/menu.tscn\")
+
+
+func _on_restart_pressed():
+	get_tree().reload_current_scene()
+"
 
 [node name="LevelSelection" type="Node2D"]
 script = ExtResource("1_w0b46")
 
-[node name="Node2D" parent="." instance=ExtResource("2_clytu")]
+[node name="Node2D" type="CanvasLayer" parent="."]
+script = SubResource("GDScript_n5vrt")
+
+[node name="Back" type="Button" parent="Node2D"]
+icon = ExtResource("2_26t7d")
+flat = true
 
 [node name="Panel" type="Label" parent="."]
-offset_right = 208.0
-offset_bottom = 144.0
+offset_left = 144.0
+offset_top = 80.0
+offset_right = 352.0
+offset_bottom = 224.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "PH"
+
+[connection signal="pressed" from="Node2D/Back" to="Node2D" method="_on_back_pressed" flags=18]
