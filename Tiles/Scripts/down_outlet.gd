@@ -5,7 +5,8 @@ var is_on = false
 var finished_flowing = true
 var waters: Array
 var nextWater = preload("res://Tiles/flowingWater.tscn")
-@onready var nextFlowCheck = get_node("FlowDirection")
+@onready var nextFlowCheck = get_node("Areas/FlowDirection")
+@onready var areas = get_node("Areas")
 @onready var spawnTimer = get_node("SpawnTimer")
 @onready var despawnTimer = get_node("DespawnTimer")
 
@@ -23,7 +24,7 @@ func _process(delta):
 				spawnTimer.start()
 		else:
 			finished_flowing = true
-			nextFlowCheck.position = Vector2.ZERO
+			areas.position = Vector2.ZERO
 
 
 func water_flow():
@@ -45,8 +46,8 @@ func is_static_body(node: Node2D):
 func _on_spawn_timer_timeout():
 	if is_on:
 		var nextTemp = nextWater.instantiate()
-		nextFlowCheck.position.y += 32
-		nextTemp.position = nextFlowCheck.position
+		areas.position.y += 32
+		nextTemp.position = areas.position
 		add_child(nextTemp)
 		waters.append(nextTemp)
 	else:

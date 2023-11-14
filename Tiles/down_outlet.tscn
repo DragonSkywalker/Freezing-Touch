@@ -20,16 +20,18 @@ flip_v = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_hncc0")
 
-[node name="FlowDirection" type="Area2D" parent="."]
-collision_layer = 32769
-collision_mask = 32769
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FlowDirection"]
-position = Vector2(0, 32)
-shape = SubResource("RectangleShape2D_f1cbc")
-
 [node name="SpawnTimer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="Areas" type="Node2D" parent="."]
+
+[node name="FlowDirection" type="Area2D" parent="Areas"]
+collision_layer = 32769
+collision_mask = 32769
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/FlowDirection"]
+position = Vector2(0, 32)
+shape = SubResource("RectangleShape2D_f1cbc")
 
 [connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]
