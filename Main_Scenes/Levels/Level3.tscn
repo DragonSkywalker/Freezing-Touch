@@ -32,5 +32,3 @@ position = Vector2(224, 496)
 
 [node name="Outlet" parent="Node" instance=ExtResource("5_1lkjw")]
 position = Vector2(272, 240)
-
-[connection signal="body_entered" from="MyTileMap/Stairs" to="MyTileMap/Stairs" method="_on_body_entered" flags=18]

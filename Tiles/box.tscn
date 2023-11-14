@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bixrxxul1six3"]
+[gd_scene load_steps=5 format=3 uid="uid://bixrxxul1six3"]
 
 [ext_resource type="Script" path="res://Tiles/box.gd" id="1_rc2y6"]
 [ext_resource type="Texture2D" uid="uid://b8bjlfkotdtmc" path="res://Assets/bigbox.png" id="2_qdo64"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktbgt"]
-size = Vector2(64, 64)
+size = Vector2(62, 62)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_017sf"]
+size = Vector2(56, 56)
 
 [node name="Box" type="RigidBody2D"]
-lock_rotation = true
 script = ExtResource("1_rc2y6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -15,3 +17,8 @@ shape = SubResource("RectangleShape2D_ktbgt")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_qdo64")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_017sf")
