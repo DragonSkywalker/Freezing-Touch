@@ -28,8 +28,7 @@ func _process(delta):
 
 
 func water_flow():
-	var nextSpace = nextFlowCheck.get_overlapping_bodies()
-	var nextTile = nextSpace.filter(is_static_body)
+	var nextTile = nextFlowCheck.get_overlapping_bodies().filter(is_static_body)
 	if nextTile.is_empty():
 		finished_flowing = false
 		if spawnTimer.is_stopped():
