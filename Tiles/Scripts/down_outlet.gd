@@ -1,4 +1,5 @@
 extends StaticBody2D
+class_name Outlet
 
 var is_on = false
 var finished_flowing = true
