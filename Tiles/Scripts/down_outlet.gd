@@ -32,10 +32,6 @@ func _process(delta):
 			finished_flowing = true
 			nextFlowCheck.position = Vector2.ZERO
 
-func _on_button_pressed():
-	if finished_flowing:
-		is_on = not is_on
-
 func is_static_body(node: Node2D):
 	return node is StaticBody2D
 
