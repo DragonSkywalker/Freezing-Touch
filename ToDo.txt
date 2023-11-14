@@ -4,9 +4,11 @@ Current:
 Main:
 	update water and ice texture
 	Level selection screen
-	make professor dialoge cutscene
 
 Optional:
+	Make pipes connect valve and outlet
+
+Maybe in the future:
 	make a box that blocks water
 	make jump relative to how long this space bar is pressed
 
