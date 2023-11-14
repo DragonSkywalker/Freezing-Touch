@@ -5,11 +5,11 @@ Main:
 	Connect valves and outlets
 	animations
 	edit README
+	Implement a simple save system for level selection
 
 Optional:
 	make a box that blocks water
 	make jump relative to how long this space bar is pressed
-	make a spin animation
 
 Note:
 	it is known that turning the outlet off while player is in contact with

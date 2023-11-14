@@ -33,4 +33,4 @@ position = Vector2(384, 496)
 [node name="Outlet" parent="Node" instance=ExtResource("5_1lkjw")]
 position = Vector2(432, 240)
 
-[connection signal="body_entered" from="MyTileMap/@Area2D@275513" to="MyTileMap/@Area2D@275513" method="_on_body_entered" flags=18]
+[connection signal="body_entered" from="MyTileMap/@Area2D@27843" to="MyTileMap/@Area2D@27843" method="_on_body_entered" flags=18]
