@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhh1x0joiei4w"]
 
 [ext_resource type="Script" path="res://Tiles/Scripts/side_outlet.gd" id="1_pa47y"]
-[ext_resource type="Texture2D" uid="uid://ccxcmp4x83yx8" path="res://Assets/outlet.png" id="2_gmxgx"]
+[ext_resource type="Texture2D" uid="uid://5hubla3in4rb" path="res://Assets/pipe.png" id="2_yq30f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hncc0"]
 size = Vector2(32, 32)
@@ -15,7 +15,7 @@ script = ExtResource("1_pa47y")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
-texture = ExtResource("2_gmxgx")
+texture = ExtResource("2_yq30f")
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
