@@ -21,7 +21,7 @@ flip_v = true
 shape = SubResource("RectangleShape2D_hncc0")
 
 [node name="SpawnTimer" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.02
 one_shot = true
 
 [node name="Areas" type="Node2D" parent="."]
