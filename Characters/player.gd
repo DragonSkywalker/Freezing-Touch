@@ -55,7 +55,10 @@ func _physics_process(delta):
 			movement = true
 		else:
 			movement = false
-		
+	
+	if get_node("Sprite2D").is_playing():
+		movement = false
+
 
 
 func _on_valve_detection_body_entered(body):

@@ -15,15 +15,7 @@ func _process(delta):
 #	print("finished_flowing: " + str(finished_flowing))
 
 	if is_on:
-		var nextSpace = nextFlowCheck.get_overlapping_bodies()
-		var nextTile = nextSpace.filter(is_static_body)
-		if nextTile.is_empty():
-			finished_flowing = false
-			if spawnTimer.is_stopped():
-				spawnTimer.start()
-		else:
-			spawnTimer.stop()
-			finished_flowing = true
+		water_flow()
 	else:
 		if not waters.is_empty():
 			finished_flowing = false
@@ -32,6 +24,19 @@ func _process(delta):
 		else:
 			finished_flowing = true
 			nextFlowCheck.position = Vector2.ZERO
+
+
+func water_flow():
+	var nextSpace = nextFlowCheck.get_overlapping_bodies()
+	var nextTile = nextSpace.filter(is_static_body)
+	if nextTile.is_empty():
+		finished_flowing = false
+		if spawnTimer.is_stopped():
+			spawnTimer.start()
+	else:
+		spawnTimer.stop()
+		finished_flowing = true
+
 
 func is_static_body(node: Node2D):
 	return node is StaticBody2D
