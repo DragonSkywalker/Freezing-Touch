@@ -21,9 +21,7 @@ layer_0/tile_data = PackedInt32Array(65535, 131073, 1, 131071, 131073, 1, 196607
 [node name="Player" parent="." instance=ExtResource("2_vpls2")]
 position = Vector2(80, 432)
 
-[node name="Button" parent="." instance=ExtResource("3_ys4fk")]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Back" parent="." instance=ExtResource("3_ys4fk")]
 
 [node name="Node" type="Node2D" parent="."]
 
