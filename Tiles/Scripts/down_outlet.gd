@@ -5,6 +5,7 @@ var is_on = false
 var finished_flowing = true
 var waters: Array
 var nextWater = preload("res://Tiles/flowingWater.tscn")
+var nextWaterPos = 0
 @onready var nextFlowCheck = get_node("Areas/FlowDirection")
 @onready var areas = get_node("Areas")
 @onready var spawnTimer = get_node("SpawnTimer")
@@ -12,9 +13,6 @@ var nextWater = preload("res://Tiles/flowingWater.tscn")
 
 
 func _process(delta):
-#	print("is_on: " + str(is_on))
-#	print("finished_flowing: " + str(finished_flowing))
-
 	if is_on:
 		water_flow()
 	else:
@@ -28,8 +26,7 @@ func _process(delta):
 
 
 func water_flow():
-	var nextTile = nextFlowCheck.get_overlapping_bodies().filter(is_static_body)
-	if nextTile.is_empty():
+	if next_tile_check():
 		finished_flowing = false
 		if spawnTimer.is_stopped():
 			spawnTimer.start()
@@ -38,8 +35,14 @@ func water_flow():
 		finished_flowing = true
 
 
+func next_tile_check() -> int:
+	var nextTile = nextFlowCheck.get_overlapping_bodies().filter(is_static_body)
+	nextWaterPos = nextTile.is_empty()
+	return nextWaterPos
+
+
 func is_static_body(node: Node2D):
-	return node is StaticBody2D
+	return node is StaticBody2D or TileMap
 
 
 func _on_spawn_timer_timeout():
