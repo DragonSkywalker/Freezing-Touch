@@ -9,10 +9,9 @@ var nextWaterPos = 0
 @onready var nextFlowCheck = get_node("Areas/FlowDirection")
 @onready var areas = get_node("Areas")
 @onready var spawnTimer = get_node("SpawnTimer")
-@onready var despawnTimer = get_node("DespawnTimer")
 
 
-func _process(delta):
+func _process(_delta):
 	if is_on:
 		water_flow()
 	else:

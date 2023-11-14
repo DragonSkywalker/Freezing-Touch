@@ -68,5 +68,4 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_xsslm")
 text = "New Achievement: Where's my secret!?"
 
-[connection signal="body_entered" from="MyTileMap/Stairs" to="MyTileMap/Stairs" method="_on_body_entered" flags=18]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

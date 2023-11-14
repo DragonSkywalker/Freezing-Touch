@@ -5,7 +5,7 @@ var is_on = true
 @onready var animation = get_node("Sprite2D")
 @onready var outlet = get_parent().get_node_or_null("Outlet")
 
-func _process(delta):
+func _process(_delta):
 	if outlet:
 		outlet.is_on = is_on
 

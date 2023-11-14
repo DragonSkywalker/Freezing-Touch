@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bl8axdawp6dpg"]
+[gd_scene load_steps=7 format=3 uid="uid://bl8axdawp6dpg"]
 
 [ext_resource type="Script" path="res://Main_Scenes/level_selection.gd" id="1_w0b46"]
 [ext_resource type="Texture2D" uid="uid://dlerrd241w6o5" path="res://Assets/back.png" id="2_26t7d"]
+[ext_resource type="Texture2D" uid="uid://b3q3466dsgjeh" path="res://Assets/level_selection.png" id="3_qm8a1"]
+[ext_resource type="FontFile" uid="uid://dd714mk03pvi" path="res://Assets/joystix monospace.otf" id="4_s3cmn"]
+[ext_resource type="Texture2D" uid="uid://dknl5oxidbtlo" path="res://Assets/lock.png" id="5_e6wbv"]
 
 [sub_resource type="GDScript" id="GDScript_n5vrt"]
 script/source = "extends CanvasLayer
@@ -25,14 +28,119 @@ script = SubResource("GDScript_n5vrt")
 [node name="Back" type="Button" parent="Node2D"]
 icon = ExtResource("2_26t7d")
 flat = true
+metadata/_edit_use_anchors_ = true
 
-[node name="Panel" type="Label" parent="."]
-offset_left = 144.0
-offset_top = 80.0
-offset_right = 352.0
-offset_bottom = 224.0
+[node name="LevelSelection" type="Sprite2D" parent="."]
+position = Vector2(320, 320)
+texture = ExtResource("3_qm8a1")
+
+[node name="1" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="1"]
+offset_left = 93.0
+offset_top = 95.0
+offset_right = 283.0
+offset_bottom = 220.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 100
-text = "PH"
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "1"
+
+[node name="Lock" type="Sprite2D" parent="1"]
+visible = false
+position = Vector2(545, 250)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
+
+[node name="2" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="2"]
+offset_left = 357.0
+offset_top = 95.0
+offset_right = 547.0
+offset_bottom = 220.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "2"
+
+[node name="Lock" type="Sprite2D" parent="2"]
+position = Vector2(452, 155)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
+
+[node name="3" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="3"]
+offset_left = 93.0
+offset_top = 267.0
+offset_right = 283.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "3"
+
+[node name="Lock" type="Sprite2D" parent="3"]
+position = Vector2(188, 327)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
+
+[node name="4" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="4"]
+offset_left = 357.0
+offset_top = 267.0
+offset_right = 547.0
+offset_bottom = 392.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "4"
+
+[node name="Lock" type="Sprite2D" parent="4"]
+position = Vector2(452, 326)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
+
+[node name="5" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="5"]
+offset_left = 93.0
+offset_top = 438.0
+offset_right = 283.0
+offset_bottom = 563.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "5"
+
+[node name="Lock" type="Sprite2D" parent="5"]
+position = Vector2(188, 498)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
+
+[node name="6" type="Node2D" parent="."]
+
+[node name="Button" type="Button" parent="6"]
+offset_left = 357.0
+offset_top = 438.0
+offset_right = 547.0
+offset_bottom = 563.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_s3cmn")
+theme_override_font_sizes/font_size = 80
+text = "6"
+
+[node name="Lock" type="Sprite2D" parent="6"]
+position = Vector2(452, 498)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("5_e6wbv")
 
 [connection signal="pressed" from="Node2D/Back" to="Node2D" method="_on_back_pressed" flags=18]
+[connection signal="pressed" from="1/Button" to="." method="_on_button1_pressed"]
+[connection signal="pressed" from="2/Button" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="3/Button" to="." method="_on_button3_pressed"]
+[connection signal="pressed" from="4/Button" to="." method="_on_button4_pressed"]
+[connection signal="button_up" from="5/Button" to="." method="_on_button5_button_up"]
+[connection signal="pressed" from="6/Button" to="." method="_on_button6_pressed"]
